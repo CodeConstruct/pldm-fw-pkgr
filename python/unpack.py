@@ -336,9 +336,9 @@ def main(file_path,output):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     #take fwpkg file name along with folder from the user
-    parser.add_argument("-F", "--fwpkg-file-path", help="Name of the PLDM FW update package", dest="fwpkg_file_path")
+    parser.add_argument("-F", "--fwpkg-file-path", help="Name of the PLDM FW update package", dest="fwpkg_file_path", required=True)
     #take the output folder name in which the unpaked data will be stored
-    parser.add_argument("-E", "--output", required=False, help="output folder")#for error injection
+    parser.add_argument("-E", "--output", help="output folder")#for error injection
     args = parser.parse_args()
     file_path = args.fwpkg_file_path
     main(file_path,args.output)
