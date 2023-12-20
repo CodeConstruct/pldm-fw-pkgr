@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT License.
 
@@ -302,7 +304,7 @@ def main(file_path,output):
     # create the output folder if it does not exist
     if not os.path.exists(folder):
         os.mkdir(folder)
-    json_file_path = "spec/pldm_spec.json"
+    json_file_path = Path(__file__).resolve().parent.parent / "spec/pldm_spec.json"
     
     # For header extraction
     with open(json_file_path, 'r') as json_file:
